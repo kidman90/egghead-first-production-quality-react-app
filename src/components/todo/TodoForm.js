@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const TodoForm = (props) => (
   <form>
     <input
-      type="text" 
+      type="text"
       onChange={props.handleInputChange}
       value={props.currentTodo}
     />
