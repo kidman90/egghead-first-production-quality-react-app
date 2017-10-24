@@ -5,18 +5,15 @@ import { TodoForm, TodoList } from './components/todo';
 import { addTodo, generateId } from './lib/todoHelpers';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      todos: [
-        { id: 1, name: 'Learn JSX', isComplete: true },
-        { id: 2, name: 'Build an Awesome App', isComplete: false },
-        { id: 3, name: 'Ship It!', isComplete: false }
-      ],
-      currentTodo: ''
-    };
-  }
-
+  state = {
+    todos: [
+      { id: 1, name: 'Learn JSX', isComplete: true },
+      { id: 2, name: 'Build an Awesome App', isComplete: false },
+      { id: 3, name: 'Ship It!', isComplete: false }
+    ],
+    currentTodo: ''
+  };
+  
   handleSubmit = (evt) => {
     evt.preventDefault();
     const newId = generateId();
