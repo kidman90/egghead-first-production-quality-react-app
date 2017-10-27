@@ -9,7 +9,7 @@ const getCurrentPath = () => {
 export class Router extends Component {
   state = {
     route: getCurrentPath()
-  }
+  };
 
   handleLinkClick = (route) => {
     this.setState({ route });
@@ -26,6 +26,12 @@ export class Router extends Component {
     return {
       route: this.state.route,
       linkHandler: this.handleLinkClick
+    };
+  }
+
+  componentDidMount() {
+    window.onpopstate = () => {
+      this.setState({ route: getCurrentPath() });
     };
   }
 
